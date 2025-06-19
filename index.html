@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>响应式图片覆盖文字</title>
+  <style>
+    /* 重置默认边距和高度 */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    /* 居中容器 */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      background-color: #f0f0f0; /* 可选背景色 */
+    }
+    /* 图片区域相对定位 */
+    .image-wrapper {
+      position: relative;
+      width: 90%;       /* 宽度自适应，最多 90% */
+      max-width: 600px; /* 最大宽度 */
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* 覆盖文字绝对定位 */
+    .overlay-text {
+      position: absolute;
+      top: 25%;         /* 图片上方四分之一处 */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 1.5em;
+      text-align: center;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-wrapper">
+      <img src="your-image.jpg" alt="替换为你的图片路径">
+      <div class="overlay-text">这里是一行居中的文字</div>
+    </div>
+  </div>
+</body>
+</html>
